@@ -1,0 +1,13 @@
+{
+    "client": {
+      "clientId":      "yourcompanyname",
+      "clientVersion": "1.5.2"
+    },
+    "threatInfo": {
+      "threatTypes":      "MALWARE",
+      "platformTypes":    "LINUX",
+      "threatEntryTypes": "URL",
+      "threatEntries": {"url": "http://testsafebrowsing.appspot.com/s/malware.html"}      
+    }
+  }
+
