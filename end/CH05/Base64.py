@@ -26,7 +26,8 @@ def decode_data(cipher_text):
 method = input("Do you wish to Encode or Decode (e/d)? ").lower()
 message = input("What is the message? ")
 
-# Using first letter in variable, call the encode or decode function
+# Using first letter in variable, 
+# call the encode or decode function
 if method[0] == "e":
     print(encode_data(message))
 elif method[0] == "d":

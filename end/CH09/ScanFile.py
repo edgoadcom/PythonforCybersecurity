@@ -101,8 +101,10 @@ file_check = check_virustotal_hash(token, file_hash)
 # Check if a scan has already been performed
 if file_check['response_code'] == 1:
     print("Scan found")
-    print("   {0} scans tested, {1} positive".format(file_check['total'], file_check['positives']))
-    print("   More details can be found at: {0}".format(file_check['permalink']))
+    print("   {0} scans tested, {1} positive".format( \
+        file_check['total'], file_check['positives']))
+    print("   More details can be found at: {0}".format( \
+        file_check['permalink']))
 else:
     print("File not previously scanned, submitting")
     # Upload file to /file/scan
@@ -118,8 +120,10 @@ else:
         if file_check['response_code'] == 1:
             # Successful scan found, print results and quit loop
             print("Results returned")
-            print("   {0} scans tested, {1} positive".format(file_check['total'], file_check['positives']))
-            print("   More details can be found at: {0}".format(file_check['permalink']))
+            print("   {0} scans tested, {1} positive".format( \
+                file_check['total'], file_check['positives']))
+            print("   More details can be found at: {0}".format( \
+                file_check['permalink']))
             break
 
 # If no results found, quit and suggest trying later

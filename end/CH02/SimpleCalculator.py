@@ -4,16 +4,16 @@
 
 # Get inputs first
 # Note we are casting the numbers as "float", we could also do "int"
-firstNum = float(input("What is the first number: "))
+first_num = float(input("What is the first number: "))
 activity = input("What activity? ( + - * / ) ")
-secondNum = float(input("What is the second number: "))
+second_num = float(input("What is the second number: "))
 
 # depending on the selected activity, perform an action
 if activity == "+":
-    print(firstNum + secondNum)
+    print(first_num + second_num)
 if activity == "-":
-    print(firstNum - secondNum)
+    print(first_num - second_num)
 if activity == "*":
-    print(firstNum * secondNum)
+    print(first_num * second_num)
 if activity == "/":
-    print(firstNum / secondNum)
+    print(first_num / second_num)

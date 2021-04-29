@@ -10,7 +10,8 @@ import hashlib
 
 def check_haveibeenpwned(sha_prefix):
     pwnd_dict = {}
-    request_uri = "https://api.pwnedpasswords.com/range/" + sha_prefix
+    request_uri = "https://api.pwnedpasswords.com/range/" + \
+        sha_prefix
     r = requests.get(request_uri)
     pwnd_list = r.text.split("\r\n")
     for pwnd_pass in pwnd_list:
@@ -25,6 +26,7 @@ sha_postfix = sha_password[5:].upper()
 pwnd_dict = check_haveibeenpwned(sha_prefix)
 
 if sha_postfix in pwnd_dict.keys():
-    print("Password has been compromised {0} times".format(pwnd_dict[sha_postfix]))
+    print("Password has been compromised {0} times".format( \
+        pwnd_dict[sha_postfix]))
 else:
     print("Password has not been compromised. It is safe to use!")

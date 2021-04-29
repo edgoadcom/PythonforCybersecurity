@@ -22,10 +22,14 @@ print(astronauts)
 print(json.dumps(astronauts, indent=2))
 
 # search through data to return specific information
-print("There are {0} people in space right now".format(astronauts["number"]))
-print("The first astronaut is {0} aboard the {1}".format(astronauts["people"][0]["name"], astronauts["people"][0]["craft"]))
+print("There are {0} people in space right now".format( \
+    astronauts["number"]))
+print("The first astronaut is {0} aboard the {1}".format( \
+    astronauts["people"][0]["name"], \
+    astronauts["people"][0]["craft"]))
 
 # Loop through all the people
 print("Full list of peole in space")
 for person in astronauts["people"]:
-    print("{0} is aboard the {1}".format(person["name"],person["craft"]))
+    print("{0} is aboard the {1}".format(person["name"], \
+    person["craft"]))

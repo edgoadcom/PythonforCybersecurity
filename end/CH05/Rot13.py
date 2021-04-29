@@ -13,7 +13,8 @@ final_message = ""
 for letter in source_message:
     # Convert the letter to the ASCII equivelent
     ascii_num = ord(letter)
-    # Check to see if an alphabetic (a-z) character, if not, skip
+    # Check to see if an alphabetic (a-z) character, 
+    # if not, skip
     if ascii_num >= 97 and ascii_num <= 122:
         # Add 13 to ascii_num to "shift" it by 13
         new_ascii = ascii_num + 13

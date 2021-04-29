@@ -3,7 +3,8 @@
 # By Ed Goad
 # date: 2/5/2021
 
-# May need 'pip3 install cryptography' or 'pip3 install cryptography -U' prior to running
+# May need 'pip3 install cryptography' or 
+# 'pip3 install cryptography -U' prior to running
 # Import necessary Python modules
 from cryptography.fernet import Fernet
 
@@ -35,7 +36,8 @@ def decrypt(cipher_text, key):
 
 encKey = ""
 # Prompt the user for the method to use
-method = input("Which would you like to do: Create key, Encrypt, Decrypt (c/e/d)? ")
+print("Which would you like to do: ")
+method = input("Create key, Encrypt, Decrypt (c/e/d)? ")
 method = method[0].lower()
 # Using the first letter of method, call the correct functions
 if method == "c":
