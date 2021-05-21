@@ -13,7 +13,7 @@ import re
 # Prompt for file to analyze
 log_file = input("Which file to analyze? ")
 
-# Open file and load into memeory
+# Open file and load into memory
 with open(log_file, "r") as f:
     sample_logs = f.readlines()
 

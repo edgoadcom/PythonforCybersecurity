@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Script that checks passwords agains haveibeenpwned.com API
+# Script that checks passwords against haveibeenpwned.com API
 # https://haveibeenpwned.com/API/v3#PwnedPasswords
 # By Ed Goad
 # date: 2/5/2021

@@ -33,5 +33,5 @@ if method[0] == "e":
 elif method[0] == "d":
     print(decode_data(message))
 else:
-    # if method wasnt "e" or "d", print error message and quit
+    # if method wasn't "e" or "d", print error message and quit
     print("Wrong method selected. Choose Encode or Decode")

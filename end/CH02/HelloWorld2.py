@@ -3,4 +3,4 @@
 # Created by Ed Goad, 2/3/2021
 
 your_name = input("What is your name? ")
-print("Hello {0}".format(yourName))
+print("Hello {0}".format(your_name))

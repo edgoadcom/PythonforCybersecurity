@@ -26,7 +26,7 @@ ip_prefix = "192.168.0."
 # Loop from 0 - 254
 for final_octet in range(254):
     # Assign IP to ping to a variable
-    # Adding 1 to final_octet becase loop starts at 0
+    # Adding 1 to final_octet because loop starts at 0
     ip = ip_prefix + str(final_octet + 1)
     
     # Call ping_host function and capture the return value

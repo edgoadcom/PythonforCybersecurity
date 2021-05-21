@@ -14,7 +14,7 @@ currrent_os = platform.system().lower()
 # Loop from 0 - 254
 for final_octet in range(254):
     # Assign IP to ping to a variable
-    # Adding 1 to final_octet becase loop starts at 0
+    # Adding 1 to final_octet because loop starts at 0
     ip = ip_prefix + str(final_octet + 1)
     if currrent_os == "windows":
         # Build our ping command for Windows

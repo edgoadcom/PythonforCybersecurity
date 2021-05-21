@@ -18,7 +18,7 @@ def encrypt(plain_text, key):
     # Convert plain_text and key into bytes for encryption
     plain_text = plain_text.encode()
     key = key.encode()
-    # Encyrpt the data using the provided key
+    # Encrypt the data using the provided key
     cipher_text = Fernet(key).encrypt(plain_text)
     # Convert the cipher_text back to a string
     cipher_text = cipher_text.decode()
@@ -46,14 +46,14 @@ elif method == "e":
     # Prompt user for plain_text message and encryption key
     plain_text = input("Message to encrypt: ")
     encKey = input("Encryption key: ")
-    # Call the encyrption function and print the results
+    # Call the encryption function and print the results
     cipher_text = encrypt(plain_text, encKey)
     print(cipher_text)
 elif method == "d":
     # Prompt user for cipher_text message and encryption key
     cipher_text = input("Message to decrypt: ")
     encKey = input("Encryption key: ")
-    # Call the decryption function and print the resuls
+    # Call the decryption function and print the results
     plain_text = decrypt(cipher_text, encKey)
     print(plain_text)
 else:

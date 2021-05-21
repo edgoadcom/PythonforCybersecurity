@@ -11,7 +11,7 @@ final_message = ""
 
 # Loop through each letter in the source message
 for letter in source_message:
-    # Convert the letter to the ASCII equivelent
+    # Convert the letter to the ASCII equivalent
     ascii_num = ord(letter)
     # Check to see if an alphabetic (a-z) character, 
     # if not, skip
