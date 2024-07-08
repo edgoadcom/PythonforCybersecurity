@@ -2,6 +2,6 @@
 # A simple "Hello World" script in python with Inputs
 # Created 
 
-# Suggestion, build out 1 line at a time
-# Once multiple print statemetns exist, put a breakpoint at first print line
-# Then walk through as an example of "debugging"
+# your_name = input("wtat is your name? ")
+# print("Hello {0}" format(your_name))
+
