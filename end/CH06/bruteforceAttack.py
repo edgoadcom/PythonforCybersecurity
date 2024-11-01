@@ -8,14 +8,14 @@
 # Suggested to start by debugging to show how 
 # brute force walks through all available options 
 
-import crypt
+from passlib.hash import sha512_crypt
 
-def test_password(hashed_password, algorithm_salt, \
-    plaintext_password):
-    # Using the provided algorithm/salt 
-    # and plaintext password, create a hash
-    crypted_password = crypt.crypt(plaintext_password, \
-        algorithm_salt)
+def test_password(hashed_password, 
+    salt, plaintext_password):
+    # Using the provided algorithm/salt and
+    # plaintext password, create a hash
+    crypted_password = sha512_crypt.using(rounds=5000).hash(
+        plaintext_password, salt=salt)
     # Compare hashed_password with the just created hash
     if hashed_password == crypted_password:
         return True
@@ -24,11 +24,11 @@ def test_password(hashed_password, algorithm_salt, \
 hashed_password = "$6$G.DTW7g9s5U7KYf5$QFcHx0/J88HV/Q0ab653"
 hashed_password += "gfYQ1KyNGx5HRhDQYyai2ZUy7Aw4tyfJ6/kI6kl"
 hashed_password += "lfXl0DyS.LuaUJvqnlIn2fVM5F0"
-algorithm_salt = "$6$G.DTW7g9s5U7KYf5$"
+salt = "G.DTW7g9s5U7KYf5"
 
 for password in range(100000):
     result = test_password(hashed_password, \
-        algorithm_salt, str(password))
+        salt, str(password))
     if result:
-        print("Match found: {0}".format(i))
+        print("Match found: {0}".format(password))
         break
