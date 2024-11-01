@@ -2,44 +2,51 @@
 # Script that performs a dictionary attack 
 # against known password hashes
 # Needs a dictionary file to run. Suggested to use 
-# https://github.com/danielmiessler/SecLists
-# /tree/master/Passwords/Common-Credentials
+# https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
 # By Ed Goad
-# date: 2/5/2021
+# date: 11/1/2004
 
 # Import necessary Python modules
-import crypt
+import os
+import sys
+from passlib.hash import sha512_crypt
 
-def test_password(hashed_password, \
-    algorithm_salt, plaintext_password):
+def test_password(hashed_password, 
+    salt, plaintext_password):
     # Using the provided algorithm/salt and
     # plaintext password, create a hash
-    crypted_password = crypt.crypt( \
-        plaintext_password, algorithm_salt)
+    crypted_password = sha512_crypt.using(rounds=5000).hash(
+        plaintext_password, salt=salt)
     # Compare hashed_password with the just created hash
     if hashed_password == crypted_password:
         return True
     return False
     
-
 def read_dictionary(dictionary_file):
     # Open provided dictionary file
     # and read contents into variable
-    f = open(dictionary_file, "r")
+    file_path = os.path.join(script_dir, dictionary_file)
+    f = open(file_path, "r")
     message = f.read()
     return message
 
-# Load dictionary file and prompt for hash and algorithm/salt
-password_dictionary = read_dictionary("top10.txt")
+# Get current file Directory
+script_path = os.path.abspath(__file__)
+script_dir = os.path.dirname(script_path)
+
+# Load dictionary file and prompt for hash
+password_dictionary = read_dictionary("top1000.txt")
 hashed_password = input("What is the hashed password? ")
-algorithm_salt = input("What is the algorithm and salt? ")
+hash_parts = hashed_password.split("$")
+salt = hash_parts[2]
 
 # For each password in dictionary file,
 # test against hashed_password
 for password in password_dictionary.splitlines():
-    result = test_password(hashed_password, \
-        algorithm_salt, password)
+    result = test_password(hashed_password, salt, password)
     if result:
         # If a match is found, print it and quit
         print("Match found: {0}".format(password))
-        break
+        sys.exit()
+# No matches found, print error and quit
+print("No match found, try a different dictionary")
