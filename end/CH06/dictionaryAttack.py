@@ -35,7 +35,7 @@ script_path = os.path.abspath(__file__)
 script_dir = os.path.dirname(script_path)
 
 # Load dictionary file and prompt for hash
-password_dictionary = read_dictionary("top1000.txt")
+password_dictionary = read_dictionary("top10.txt")
 hashed_password = input("What is the hashed password? ")
 hash_parts = hashed_password.split("$")
 salt = hash_parts[2]
