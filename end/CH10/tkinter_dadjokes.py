@@ -4,32 +4,36 @@
 
 # Import tkinter
 import tkinter
+from tkinter.font import Font
 import requests
 
 # Functions
-def get_people_in_space():
-    request_uri = "http://api.open-notify.org/astros.json"
-    r = requests.get(request_uri)
-    items = r.json()
-    people_in_space = items["number"]
-    tkinter.Label(my_window, text = people_in_space).pack()
-
 def get_dadjoke():
     request_uri = "https://icanhazdadjoke.com/"
     headers = { "Accept": "application/json" }
     r = requests.get(request_uri, headers = headers)
     items = r.json()
     joke = items["joke"]
-    #tkinter.Label(my_window, text = joke).pack()
     my_label.configure(text = joke)
 
 # Create the GUI main window
 my_window = tkinter.Tk()
 
+# Create font object
+my_font = Font(family="Arial", weight="bold", size=50)
+# Set wraplength to 25 characters
+char_width = my_font.measure("A")
+wrap_length = char_width * 25
+
 # Add widgets
-my_label = tkinter.Label(my_window, text = "Get Dad Joke", font = ("Arial Bold", 50))
+my_label = tkinter.Label(my_window,
+                         text = "Get Dad Joke",
+                         font = my_font,
+                         wraplength=wrap_length)
 my_label.pack()
-my_button = tkinter.Button(my_window, text = "Click here to update", command = get_dadjoke)
+my_button = tkinter.Button(my_window,
+                           text = "Click here to update",
+                           command = get_dadjoke)
 my_button.pack()
 
 # Enter the main event loop

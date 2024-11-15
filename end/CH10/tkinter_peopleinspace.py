@@ -18,9 +18,11 @@ def get_people_in_space():
 my_window = tkinter.Tk()
 
 # Add widgets
-my_label = tkinter.Label(my_window, text = "People in Space", font = ("Arial Bold", 50))
+my_label = tkinter.Label(my_window, text = "People in Space",
+                         font = ("Arial Bold", 50))
 my_label.pack()
-my_button = tkinter.Button(my_window, text = "Click here to update", command = get_people_in_space)
+my_button = tkinter.Button(my_window, text = "Click here to update",
+                           command = get_people_in_space)
 my_button.pack()
 
 # Enter the main event loop

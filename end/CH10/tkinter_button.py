@@ -1,6 +1,6 @@
 # Seconder tkinter script
 # Add a button and command
-# Create by Ed 12/29
+# Create by Ed 11/15
 
 # Import tkinter
 import tkinter
@@ -15,12 +15,12 @@ def button_clicked():
 my_window = tkinter.Tk()
 
 # Add widgets
-my_label = tkinter.Label(my_window, text = "Hello World", font = ("Arial Bold", 50))
+my_label = tkinter.Label(my_window, text = "Hello World",
+                         font = ("Arial Bold", 50))
 my_label.pack()
-my_button = tkinter.Button(my_window, text = "Click Here", command = button_clicked)
+my_button = tkinter.Button(my_window, text = "Click Here",
+                           command = button_clicked)
 my_button.pack()
-
-
 
 # Enter the main event loop
 my_window.mainloop()
