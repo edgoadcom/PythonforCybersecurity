@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
 # Port scanner example 
-# Use 'pip3 install python-nmap' to install modules
+# Use 'sudo apt -y install python3-pip' to install pip
 # Use 'sudo apt -y install nmap' to install nmap
+# Use 'pip3 install python-nmap' to install modules
 # By Ed Goad
-# 2/27/2021
+# 12/12
 
 # import necessary Python modules
 import nmap
 
 # Identify target address
-target_address = "192.168.0.10"
+target_addresses = "192.168.0.0/24"
 
-# Identify start and stop port for the scan
-port_start = 1
-port_end = 100
+# Identify the ports for the scan
+ports = "1-100"
 
 # Create the scanner object
 scanner = nmap.PortScanner()
 
-print("Scanning {0}".format(target_address))
-# Loop through each port and scan
-for port in range(port_start, port_end + 1):
-    result = scanner.scan(target_address, str(port))
-    port_status = result['scan'][target_address]['tcp'][port]['state']
-    print("\tPort: {0} is {1}".format(port, port_status))
+# Scan the network
+results = scanner.scan(target_addresses, ports, arguments="-T5")
 
+# Report results
+for target, host in results['scan'].items():
+    print(target)
+
+    # If open ports are found, print the current state
+    if 'tcp' in host:
+        for port, status in host['tcp'].items():
+            print(f"\t{port} - {status['state']} ({status['name']})")
