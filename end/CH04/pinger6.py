@@ -2,7 +2,7 @@
 # Sixth example of pinging from Python
 # Writing log messages to a file
 # By Ed Goad
-# 2/27/2021
+# 12/12
 
 # import necessary Python modules
 import platform
@@ -10,14 +10,13 @@ import os
 from datetime import datetime
 
 def write_log(message):
-    now = str(datetime.now()) + "\t"
-    message = now + str(message) + "\n"
+    now = datetime.now()
     f = open("pinger.log", "a")
-    f.write(message)
+    f.write(f"{now}\t{message}\n")
     f.close()
 
 def ping_host(ip):
-    # Determine the currrent OS
+    # Determine the current OS
     currrent_os = platform.system().lower()
     if currrent_os == "windows":
         # Build our ping command for Windows
@@ -30,17 +29,23 @@ def ping_host(ip):
     return exit_code
 
 def import_addresses():
+    # Get current file directory
+    script_path = os.path.abspath( __file__ )
+    script_dir = os.path.dirname( script_path )
+    # Build file path
+    file_path = os.path.join(script_dir, "ips.txt")
+
     # Create empty list object
-    lines = []
+    addresses = []
     # Open file and read line-by-line
-    f = open("ips.txt", "r")
+    f = open(file_path, "r")
     for line in f:
         # Use strip() to remove spaces and carriage returns
         line = line.strip()
-        # Add the line to the lines list object
-        lines.append(line)
+        # Add the line to the addresses list object
+        addresses.append(line)
     # Return the list object to the main body
-    return lines
+    return addresses
 
 # read IPs from file
 write_log("Reading IPs from ips.txt")
