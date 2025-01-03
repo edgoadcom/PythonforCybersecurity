@@ -2,17 +2,20 @@
 # Script that lists repositories in GitHub
 # Requires a Personal Access Token to run
 # By Ed Goad
-# date: 2/5/2021
+# date: 1/3
 
 # Import Python modules
+import os
 import requests
-import json
 import configparser
 
 def get_api_key(key_name):
+    # Get the location of the secrets file
+    home_dir = os.path.expanduser("~")
+    secrets_file = os.path.join(home_dir, "secrets.ini")
     # Create the ConfigParser and load the file
     config = configparser.ConfigParser()
-    config.read("/home/pi/secrets.ini")
+    config.read(secrets_file)
     # Get the API key and return
     api_key = config["APIKeys"][key_name]
     return api_key
@@ -20,7 +23,7 @@ def get_api_key(key_name):
 def list_respositores(token):
     # Setup the base URL and Authorization header
     url = "https://api.github.com/user/repos"
-    headers = { 'Authorization' : "token " + token }
+    headers = { 'Authorization' : "Bearer " + token }
     # Perform the request
     response = requests.get(
         url, 
