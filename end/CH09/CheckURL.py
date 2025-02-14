@@ -54,7 +54,7 @@ def check_safebrowsing_url(token, threat, platform, test_url):
 token = get_api_key("GoogleSafeBrowsing")
 
 # Prompt user for platformTypes, Default to "LINUX"
-platform = input("What platform are you scanning form [LINUX] ") or "LINUX"
+platform = input("What platform are you scanning from [LINUX] ") or "LINUX"
 
 # Default threatTypes to "MALWARE"
 threat = input("What threat type [MALWARE] ") or "MALWARE"
@@ -64,9 +64,11 @@ url = input("What URL to scan? ") or "http://testsafebrowsing.appspot.com/s/malw
 
 scan_results = check_safebrowsing_url(token, threat, platform, url)
 if "matches" in scan_results:
+    print("Threats found")
     matches = scan_results["matches"]
     for match in matches:
-        print(match["platformType"] + 
+        print("\t" +
+              match["platformType"] + 
               " / " + match["threatType"] + 
               ": " + match["threat"]["url"]
               )
