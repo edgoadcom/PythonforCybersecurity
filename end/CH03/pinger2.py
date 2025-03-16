@@ -11,9 +11,9 @@ import os
 ip = "127.0.0.1"
 # Determine the current OS
 current_os = platform.system().lower()
-if current_os == "windows":
-    # Build our ping command for Windows
-    ping_cmd = f"ping -n 1 -w 2 {ip} > nul"
+if current_os == "darwin":
+    # Build our ping command for darwin
+    ping_cmd = f"ping -n 1 -w 2 {ip} > /dev/null 2>&1"
 else:
     # Build our ping command for other OSs
     ping_cmd = f"ping -c 1 -w 2 {ip} > /dev/null 2>&1"
