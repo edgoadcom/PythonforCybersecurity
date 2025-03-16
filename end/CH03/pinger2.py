@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/venv python3
 # Second example of pinging from Python
-# By Ed Goad
-# 2/27/2021
+# By Quentin Athula
+# 3/15/2025
 
 # import necessary Python modules
 import platform
@@ -9,9 +9,9 @@ import os
 
 # Assign IP to ping to a variable
 ip = "127.0.0.1"
-# Determine the currrent OS
-currrent_os = platform.system().lower()
-if currrent_os == "windows":
+# Determine the current OS
+current_os = platform.system().lower()
+if current_os == "windows":
     # Build our ping command for Windows
     ping_cmd = f"ping -n 1 -w 2 {ip} > nul"
 else:
