@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # example workign with conditionals
 #By Ed Goad
-# date: 2/3/2021
+# date: 2/3
 
 # Suggestion - 
 #   add in <, ==, > one at a time

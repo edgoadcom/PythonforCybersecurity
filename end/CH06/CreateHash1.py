@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Script that hashes a password
 # By Ed Goad
-# date: 11/1/2024
+# date: 11/1
 
 # Import Python modules
 from passlib.hash import sha256_crypt

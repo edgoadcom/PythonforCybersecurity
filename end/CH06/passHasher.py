@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Script that hashes a password
 #By Ed Goad
-# date: 2/5/2021
+# date: 2/5
 import crypt
 
 # Simple script that takes an unhashed password and a salt

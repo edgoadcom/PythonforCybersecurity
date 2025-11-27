@@ -6,7 +6,7 @@
 # and
 # https://www.cgisecurity.com/fingerprinting-port80-attacks-a-look-into-web-server-and-web-application-attack-signatures-part-two.html
 # By Ed Goad
-# date: 2/5/2021
+# date: 2/5
 
 #Import Python modules
 import os

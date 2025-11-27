@@ -4,7 +4,7 @@
 # Needs a dictionary file to run. Suggested to use 
 # https://github.com/danielmiessler/SecLists/tree/master/Passwords/Common-Credentials
 # By Ed Goad
-# date: 11/1/2004
+# date: 11/1
 
 # Import necessary Python modules
 import os

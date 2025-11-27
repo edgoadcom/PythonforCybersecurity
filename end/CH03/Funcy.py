@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # example workign with Functions
 #By Ed Goad
-# date: 2/3/2021
+# date: 2/3
 
 # Suggestions - 
 #  build out 1 function at a time, from top down

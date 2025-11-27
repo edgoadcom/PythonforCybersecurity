@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Example brute-force attacker
 #By Ed Goad
-# date: 2/5/2021
+# date: 2/5
 
 # NOTE: this example is limited to numbers. There are no letters or symbols in this example
 # Suggested to start by debugging to show how brute force walks through all available options 

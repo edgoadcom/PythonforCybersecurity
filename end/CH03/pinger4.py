@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Fourth example of pinging from Python
 # By Ed Goad
-# 2/27/2021
+# 2/27
 
 # import necessary Python modules
 import platform

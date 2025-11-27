@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Script that encrypts/decrypts text using ROT13
 # By Ed Goad
-# date: 2/5/2021
+# date: 2/5
 
 # Prompt for the source message
 source_message = input("What is the message to encrypt/decrypt? ")

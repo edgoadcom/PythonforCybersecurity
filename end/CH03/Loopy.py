@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 # example workign with Loops
 #By Ed Goad
-# date: 2/5/2021
-
-# Suggestion
-# build out 1 function at a time and walk through them with the debugger
-# not necessary to run all functions
+# date: 2/5
 
 def forLoop():
     for x in range(6):

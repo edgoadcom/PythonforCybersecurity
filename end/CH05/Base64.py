@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Script that "encrypts"/"decrypts" text using base64 encoding
 # By Ed Goad
-# 2/5/2021
+# 2/5
 
 # import necessary Python modules
 import base64
